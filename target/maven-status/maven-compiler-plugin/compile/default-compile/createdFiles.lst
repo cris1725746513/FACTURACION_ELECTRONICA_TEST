@@ -1,0 +1,5 @@
+dao\XmlInterface.class
+services\Xml.class
+dao\XmlDaoImplements.class
+com\pyxis\sri\SRI.class
+controllers\XmlControllers.class
