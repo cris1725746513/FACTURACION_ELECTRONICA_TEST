@@ -4,6 +4,8 @@
  */
 package services;
 
+import java.util.List;
+
 /**
  *
  * @author Cristian Leones
@@ -11,7 +13,7 @@ package services;
 public class Xml {
     //<infoTributaria> 
 
-    private String ambiente
+    private String ambiente;
     private String tipoEmision;
     private String razonSocial;
     private String nombreComercial;
@@ -36,19 +38,33 @@ public class Xml {
     private String totalSinImpuestos;
     private String totalDescuento;
     //              totalDescuento
+    //totalconimpuestos
     //totalImpuesto
     private String codigo;
     private String codigoPorcentaje;
     private String baseImponible;
+    private String tarifa;
     private String valor;
     //</totalImpuesto >
+    //totalconimpuestos
+    private String importetotal;
+    private String moneda;
+
+    //<pagos>
+    //       <pago>
+    private String formapago;
+    private String total;
+    //    </pago>
+    //    </pagos>
+
+    private List<XmlDetalles> detalles;
 
     @Override
     public String toString() {
-        return "Xml{" + "ambiente=" + ambiente + ", tipoEmision=" + tipoEmision + ", razonSocial=" + razonSocial + ", nombreComercial=" + nombreComercial + ", ruc=" + ruc + ", claveAcceso=" + claveAcceso + ", codDoc=" + codDoc + ", estab=" + estab + ", ptoEmi=" + ptoEmi + ", secuencial=" + secuencial + ", dirMatriz=" + dirMatriz + ", fechaEmision=" + fechaEmision + ", dirEstablecimiento=" + dirEstablecimiento + ", contribuyenteEspecial=" + contribuyenteEspecial + ", obligadoContabilidad=" + obligadoContabilidad + ", tipoIdentificacionComprador=" + tipoIdentificacionComprador + ", razonSocialComprador=" + razonSocialComprador + ", identificacionComprador=" + identificacionComprador + ", direccionComprador=" + direccionComprador + ", totalSinImpuestos=" + totalSinImpuestos + ", totalDescuento=" + totalDescuento + ", codigo=" + codigo + ", codigoPorcentaje=" + codigoPorcentaje + ", baseImponible=" + baseImponible + ", valor=" + valor + '}';
+        return "Xml{" + "ambiente=" + ambiente + ", tipoEmision=" + tipoEmision + ", razonSocial=" + razonSocial + ", nombreComercial=" + nombreComercial + ", ruc=" + ruc + ", claveAcceso=" + claveAcceso + ", codDoc=" + codDoc + ", estab=" + estab + ", ptoEmi=" + ptoEmi + ", secuencial=" + secuencial + ", dirMatriz=" + dirMatriz + ", fechaEmision=" + fechaEmision + ", dirEstablecimiento=" + dirEstablecimiento + ", contribuyenteEspecial=" + contribuyenteEspecial + ", obligadoContabilidad=" + obligadoContabilidad + ", tipoIdentificacionComprador=" + tipoIdentificacionComprador + ", razonSocialComprador=" + razonSocialComprador + ", identificacionComprador=" + identificacionComprador + ", direccionComprador=" + direccionComprador + ", totalSinImpuestos=" + totalSinImpuestos + ", totalDescuento=" + totalDescuento + ", codigo=" + codigo + ", codigoPorcentaje=" + codigoPorcentaje + ", baseImponible=" + baseImponible + ", tarifa=" + tarifa + ", valor=" + valor + ", importetotal=" + importetotal + ", moneda=" + moneda + ", formapago=" + formapago + ", total=" + total + ", detalles=" + detalles + '}';
     }
 
-    public Xml(String ambiente, String tipoEmision, String razonSocial, String nombreComercial, String ruc, String claveAcceso, String codDoc, String estab, String ptoEmi, String secuencial, String dirMatriz, String fechaEmision, String dirEstablecimiento, String contribuyenteEspecial, String obligadoContabilidad, String tipoIdentificacionComprador, String razonSocialComprador, String identificacionComprador, String direccionComprador, String totalSinImpuestos, String totalDescuento, String codigo, String codigoPorcentaje, String baseImponible, String valor) {
+    public Xml(String ambiente, String tipoEmision, String razonSocial, String nombreComercial, String ruc, String claveAcceso, String codDoc, String estab, String ptoEmi, String secuencial, String dirMatriz, String fechaEmision, String dirEstablecimiento, String contribuyenteEspecial, String obligadoContabilidad, String tipoIdentificacionComprador, String razonSocialComprador, String identificacionComprador, String direccionComprador, String totalSinImpuestos, String totalDescuento, String codigo, String codigoPorcentaje, String baseImponible, String tarifa, String valor, String importetotal, String moneda, String formapago, String total, List<XmlDetalles> detalles) {
         this.ambiente = ambiente;
         this.tipoEmision = tipoEmision;
         this.razonSocial = razonSocial;
@@ -73,11 +89,17 @@ public class Xml {
         this.codigo = codigo;
         this.codigoPorcentaje = codigoPorcentaje;
         this.baseImponible = baseImponible;
+        this.tarifa = tarifa;
         this.valor = valor;
+        this.importetotal = importetotal;
+        this.moneda = moneda;
+        this.formapago = formapago;
+        this.total = total;
+        this.detalles = detalles;
     }
 
-    // </infoFactura>
-
+    
+    
     public String getAmbiente() {
         return ambiente;
     }
@@ -270,6 +292,14 @@ public class Xml {
         this.baseImponible = baseImponible;
     }
 
+    public String getTarifa() {
+        return tarifa;
+    }
+
+    public void setTarifa(String tarifa) {
+        this.tarifa = tarifa;
+    }
+
     public String getValor() {
         return valor;
     }
@@ -277,4 +307,46 @@ public class Xml {
     public void setValor(String valor) {
         this.valor = valor;
     }
+
+    public String getImportetotal() {
+        return importetotal;
+    }
+
+    public void setImportetotal(String importetotal) {
+        this.importetotal = importetotal;
+    }
+
+    public String getMoneda() {
+        return moneda;
+    }
+
+    public void setMoneda(String moneda) {
+        this.moneda = moneda;
+    }
+
+    public String getFormapago() {
+        return formapago;
+    }
+
+    public void setFormapago(String formapago) {
+        this.formapago = formapago;
+    }
+
+    public String getTotal() {
+        return total;
+    }
+
+    public void setTotal(String total) {
+        this.total = total;
+    }
+
+    public List<XmlDetalles> getDetalles() {
+        return detalles;
+    }
+
+    public void setDetalles(List<XmlDetalles> detalles) {
+        this.detalles = detalles;
+    }
+
+    
 }
