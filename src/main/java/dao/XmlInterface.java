@@ -9,5 +9,8 @@ package dao;
  * @author Cristian Leones
  */
 public interface XmlInterface {
+    void firmar();
+    void Autorizar();
+    void Guardar();
     
 }
