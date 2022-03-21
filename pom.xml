@@ -22,7 +22,7 @@
             <artifactId>MITyCLibAPI</artifactId>
             <version>1.1.7</version>
         </dependency>
-      <dependency>
+        <dependency>
             <groupId>MITyCL</groupId>
             <artifactId>MITyCLibCert</artifactId>
             <version>1.1.7</version>
@@ -58,9 +58,15 @@
             <version>1.1.7</version>
         </dependency>
         <dependency>
+            <groupId>javax.xml.soap</groupId>
+            <artifactId>javax.xml.soap</artifactId>
+            <version>1.2.0-20081006</version>
+        </dependency>
+
+        <dependency>
             <groupId>com.guicedee.services</groupId>
             <artifactId>commons-codec</artifactId>
-            <version>1.2.0.1-jre11</version>
+            <version>1.2.0</version>
         </dependency>
         <dependency>
             <groupId>commons-collections</groupId>
@@ -71,6 +77,12 @@
             <groupId>commons-digester</groupId>
             <artifactId>commons-digester</artifactId>
             <version>2.1</version>
+            <exclusions>
+                <exclusion>
+                    <groupId>commons-beanutils</groupId>
+                    <artifactId>commons-beanutils</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>commons-httpclient</groupId>
@@ -110,6 +122,12 @@
             <version>1.1</version>
         </dependency>
         
+        <dependency>
+            <groupId>javax.xml.soap</groupId>
+            <artifactId>javax.xml.soap-api</artifactId>
+            <version>1.4.0</version>
+        </dependency>
+
     </dependencies>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
